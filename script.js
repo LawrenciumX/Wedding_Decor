@@ -131,30 +131,37 @@ waLink.href = `https://wa.me/${WA_NUMBER}?text=${waMessage}`;
 const form = $("#quoteForm");
 const statusEl = $("#formStatus");
 
-form?.addEventListener("submit", (e) => {
+form?.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const data = Object.fromEntries(new FormData(form).entries());
 
-  // Demo behavior (replace with your backend or Formspree)
-  statusEl.textContent = "Thanks! Your request has been captured. We'll reach out shortly.";
+statusEl.textContent = "Sending your request…";
 
-  // Optional: open mailto with prefilled content
-  const subject = encodeURIComponent(`Quote request — ${data.name} (${data.date})`);
-  const body = encodeURIComponent(
-`Name: ${data.name}
-Phone: ${data.phone}
-Email: ${data.email}
-Date: ${data.date}
-Venue/City: ${data.venue}
-Service: ${data.service}
+try {
+  const response = await fetch(form.action, {
+    method: form.method || "POST",
+    body: new FormData(form),
+    headers: {
+      Accept: "application/json"
+    }
+  });
 
-Notes:
-${data.notes || "-"}`
-  );
-  window.location.href = `mailto:hello@everafterdecor.com?subject=${subject}&body=${body}`;
+  const result = await response.json().catch(() => ({}));
 
-  form.reset();
+  if (response.ok) {
+    statusEl.textContent =
+        "Thanks! Your request has been sent successfully. We'll reach out shortly.";
+    form.reset();
+  } else {
+    statusEl.textContent =
+        result?.errors?.map(e => e.message).join(" ") ||
+    "Oops! Something went wrong. Please try again.";
+  }
+} catch (error) {
+  statusEl.textContent =
+      "Network error. Please check your connection and try again.";
+}
 });
+
 
 /* ============================= */
 /* LIGHT / DARK MODE */
