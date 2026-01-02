@@ -120,10 +120,10 @@ $$(".acc-item").forEach((btn) => {
 });
 
 /* WhatsApp link (replace number) */
-const WA_NUMBER = "15550000000"; // <-- change to your WhatsApp number, digits only
+const WA_NUMBER = "14034020179"; // <-- change to your WhatsApp number, digits only
 const waLink = $("#waLink");
 const waMessage = encodeURIComponent(
-  "Hi EverAfter Decor! I'd like a quote for my event. Date: __ / City/Venue: __ / Services: __"
+  "Hi Precious Event Décor! I'd like to contact you with my event details. Date: __ / City/Venue: __ / Services: __"
 );
 waLink.href = `https://wa.me/${WA_NUMBER}?text=${waMessage}`;
 
