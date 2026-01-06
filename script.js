@@ -63,7 +63,8 @@ chips.forEach((chip) => {
     shots.forEach((shot) => {
       const cat = (shot.dataset.category || "").toLowerCase();
       const show = filter === "all" || cat.includes(filter);
-      shot.style.display = show ? "" : "none";
+      /*shot.style.display = show ? "" : "none";*/
+shot.classList.toggle("hidden", !show);
     });
   });
 });

@@ -741,6 +741,12 @@ input:focus, select:focus, textarea:focus{
   border-color: rgba(0,0,0,0.12);
 }
 
+:root[data-theme="light"] .chip.active {
+  border-color: rgba(197,154,60,0.75);
+  background: rgba(197,154,60,0.12);
+  color: #1b1b1f;
+}
+
 :root[data-theme="light"] .header {
   background: rgba(250,248,245,0.85);
   backdrop-filter: blur(10px);
@@ -893,5 +899,17 @@ input:focus, select:focus, textarea:focus{
   color: #1b1b1f;
   border-color: #c59a3c;
 }
+
+.shot {
+  will-change: opacity, transform;
+}
+
+.shot.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: scale(0.96);
+}
+
 
 
