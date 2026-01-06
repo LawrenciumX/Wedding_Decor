@@ -195,3 +195,14 @@ document.getElementById("backToTop")?.addEventListener("click", (e) => {
 window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+const slides = document.querySelectorAll('.carousel img');
+let current = 0;
+
+slides[current].classList.add('active');
+
+setInterval(() => {
+  slides[current].classList.remove('active');
+current = (current + 1) % slides.length;
+slides[current].classList.add('active');
+}, 15000); // change every 15 seconds
+

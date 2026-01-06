@@ -911,5 +911,30 @@ input:focus, select:focus, textarea:focus{
   transform: scale(0.96);
 }
 
+.frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel img {
+  position: absolute;
+  inset: 0;
+  height: 520px;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 5.5s ease-in-out;
+}
+
+.carousel img.active {
+  opacity: 1;
+  position: relative;
+}
+
+
 
 
