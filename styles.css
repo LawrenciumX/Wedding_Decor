@@ -868,7 +868,7 @@ input:focus, select:focus, textarea:focus{
 
 /* Drawer header */
 :root[data-theme="light"] .drawer-head{
-  border-bottom: 1px solid rgba(0,0,0,0.12);
+  /*border-bottom: 1px solid rgba(0,0,0,0.12);*/
 }
 
 /* Brand */
