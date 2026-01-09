@@ -219,54 +219,7 @@ if (isMobile) {
     "crafted elegantly.",
     "made timeless."
   ];
-
-  let index = 0;
-  const visibleTime = 5000;
-  const fadeDuration = 800;
-
-  target.textContent = texts[index];
-  target.style.opacity = 1;
-
-  function easeInOut(t) {
-    return t < 0.5
-        ? 2 * t * t
-        : 1 - Math.pow(-2 * t + 2, 2) / 2;
-  }
-
-  function fade(element, from, to, duration, callback) {
-    const start = performance.now();
-
-    function animate(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = easeInOut(progress);
-      element.style.opacity = from + (to - from) * eased;
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        element.style.opacity = to;
-        callback && callback();
-      }
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  function cycleText() {
-    // hold visible text
-    setTimeout(() => {
-      // fade out
-      fade(target, 1, 0, fadeDuration, () => {
-      index = (index + 1) % texts.length;
-      target.textContent = texts[index];
-
-      // fade in
-      fade(target, 0, 1, fadeDuration, cycleText);
-    });
-  }, visibleTime);
-  }
-
-  cycleText();
+  target.textContent = texts[0];
 }
 
 if (!isMobile) {
