@@ -221,6 +221,7 @@ const deletingSpeed = 50;
 const pauseAfterTyping = 1500;
 
 const target = document.getElementById("typewriter");
+const isMobile = window.matchMedia("(max-width: 720px)").matches;
 
 let textIndex = 0;
 let charIndex = 0;
@@ -229,14 +230,27 @@ let isDeleting = false;
 function typeEffect() {
   const currentText = texts[textIndex];
 
+  // TYPING
   if (!isDeleting) {
     target.textContent = currentText.substring(0, charIndex + 1);
     charIndex++;
 
     if (charIndex === currentText.length) {
-      setTimeout(() => (isDeleting = true), pauseAfterTyping);
+      setTimeout(() => {
+        if (isMobile) {
+          // MOBILE: switch text without deleting
+          textIndex = (textIndex + 1) % texts.length;
+          charIndex = 0;
+        } else {
+          // DESKTOP: start deleting
+          isDeleting = true;
     }
-  } else {
+    }, pauseAfterTyping);
+    }
+  }
+
+  // DELETING (DESKTOP ONLY)
+  else {
     target.textContent = currentText.substring(0, charIndex - 1);
     charIndex--;
 
@@ -253,6 +267,7 @@ function typeEffect() {
 }
 
 typeEffect();
+
 
 
 
