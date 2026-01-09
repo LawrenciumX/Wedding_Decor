@@ -210,64 +210,107 @@ slides[current].classList.add('active');
 
 
 /* Typing effects */
-const texts = [
-  "styled to perfection.",
-  "crafted elegantly.",
-  "made timeless."
-];
-
-const typingSpeed = 80;
-const deletingSpeed = 50;
-const pauseAfterTyping = 1500;
-
-const target = document.getElementById("typewriter");
 const isMobile = window.matchMedia("(max-width: 720px)").matches;
+const target = document.getElementById("typewriter");
 
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+if (isMobile) {
+  const texts = [
+    "styled to perfection.",
+    "crafted elegantly.",
+    "made timeless."
+  ];
 
-function typeEffect() {
-  const currentText = texts[textIndex];
+  let index = 0;
+  const visibleTime = 5000;
+  const fadeDuration = 800;
 
-  // TYPING
-  if (!isDeleting) {
-    target.textContent = currentText.substring(0, charIndex + 1);
-    charIndex++;
+  target.textContent = texts[index];
+  target.style.opacity = 1;
 
-    if (charIndex === currentText.length) {
-      setTimeout(() => {
-        if (isMobile) {
-          // MOBILE: switch text without deleting
-          textIndex = (textIndex + 1) % texts.length;
-          charIndex = 0;
-        } else {
-          // DESKTOP: start deleting
-          isDeleting = true;
-    }
-    }, pauseAfterTyping);
-    }
+  function easeInOut(t) {
+    return t < 0.5
+        ? 2 * t * t
+        : 1 - Math.pow(-2 * t + 2, 2) / 2;
   }
 
-  // DELETING (DESKTOP ONLY)
-  else {
-    target.textContent = currentText.substring(0, charIndex - 1);
-    charIndex--;
+  function fade(element, from, to, duration, callback) {
+    const start = performance.now();
 
-    if (charIndex === 0) {
-      isDeleting = false;
-      textIndex = (textIndex + 1) % texts.length;
+    function animate(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = easeInOut(progress);
+      element.style.opacity = from + (to - from) * eased;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        element.style.opacity = to;
+        callback && callback();
+      }
     }
+
+    requestAnimationFrame(animate);
   }
 
-  setTimeout(
-      typeEffect,
-      isDeleting ? deletingSpeed : typingSpeed
-  );
+  function cycleText() {
+    // hold visible text
+    setTimeout(() => {
+      // fade out
+      fade(target, 1, 0, fadeDuration, () => {
+      index = (index + 1) % texts.length;
+      target.textContent = texts[index];
+
+      // fade in
+      fade(target, 0, 1, fadeDuration, cycleText);
+    });
+  }, visibleTime);
+  }
+
+  cycleText();
 }
 
-typeEffect();
+if (!isMobile) {
+  const texts = [
+    "styled to perfection.",
+    "crafted elegantly.",
+    "made timeless."
+  ];
 
+  const typingSpeed = 80;
+  const deletingSpeed = 50;
+  const pauseAfterTyping = 1500;
 
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    const currentText = texts[textIndex];
+
+    if (!isDeleting) {
+      target.textContent = currentText.slice(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentText.length) {
+        setTimeout(() => (isDeleting = true), pauseAfterTyping);
+      }
+    } else {
+      target.textContent = currentText.slice(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+      }
+    }
+
+    setTimeout(
+        typeEffect,
+        isDeleting ? deletingSpeed : typingSpeed
+    );
+  }
+
+  typeEffect();
+}
 
 
