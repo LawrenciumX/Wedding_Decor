@@ -451,6 +451,102 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
+
+
+/* ================= FAQ SECTION ================= */
+.faq-section {
+  padding: 7rem 1.5rem;
+  background: #fafafa;
+  color: #111;
+}
+
+.faq-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Eyebrow */
+.faq-eyebrow {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #c9a24d;
+  margin-bottom: 1.5rem;
+}
+
+/* Title */
+.faq-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.3rem, 4vw, 3rem);
+  margin-bottom: 4rem;
+}
+
+/* List */
+.faq-list {
+  text-align: left;
+}
+
+/* Item */
+.faq-item {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 1.8rem 0;
+}
+
+/* Question */
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  cursor: pointer;
+  position: relative;
+  padding-right: 2rem;
+}
+
+/* Plus icon */
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
+  color: #c9a24d;
+  transition: transform 0.35s ease;
+}
+
+/* Answer */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Answer text */
+.faq-answer p {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+  margin-top: 1rem;
+  max-width: 700px;
+}
+
+/* Active state */
+.faq-item.active .faq-answer {
+  max-height: 200px; /* enough for content */
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(45deg);
+}
+
+
+
 /* ================= BOOKING CONTACTS (TEXT ONLY) ================= */
 
 .booking-contacts {
