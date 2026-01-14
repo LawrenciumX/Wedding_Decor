@@ -16,7 +16,7 @@ setInterval(() => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const words = ["wedding", "occasion", "birthday"];
+  const words = ["wedding", "occasion", "ceremony", "reception"];
 const el = document.querySelector(".word-rotate");
 
 let index = 0;

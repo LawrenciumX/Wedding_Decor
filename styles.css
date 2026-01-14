@@ -298,7 +298,7 @@ h1 {
 .word-rotate {
   display: inline-block;
   text-align: center;
-  min-width: 6.5ch;
+  min-width: 7.2ch;
   transition: opacity 0.9s ease;
 }
 
