@@ -15,3 +15,25 @@ setInterval(() => {
 },9000);
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const words = ["wedding", "occasion", "ceremony", "reception"];
+const el = document.querySelector(".word-rotate");
+
+let index = 0;
+
+setInterval(() => {
+  // fade out
+  el.style.opacity = 0;
+
+setTimeout(() => {
+  index = (index + 1) % words.length;
+el.textContent = words[index];
+
+// fade in
+el.style.opacity = 1;
+}, 900);
+}, 4500);
+});
+
+
+

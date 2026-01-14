@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -288,6 +292,306 @@ h1 {
   line-height: 1.7;
   color: #555;
 }
+
+/*word-rotate*/
+
+.word-rotate {
+  display: inline-block;
+  text-align: center;
+  min-width: 7.2ch;
+  transition: opacity 0.9s ease;
+}
+
+.hero-title {
+  line-height: 1.15;
+}
+
+.accent-line {
+  display: inline-block;
+  margin-top: 0.15em;
+
+  background: linear-gradient(
+          135deg,
+          #f5d08c 0%,
+          #e6b96f 45%,
+          #f7ddb0 70%,
+          #f5d08c 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brand-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.brand-text {
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap; /* CRITICAL */
+}
+
+.brand-line .line {
+  width: 40px;
+  height: 1px;
+  background: rgba(245,208,140,0.6);
+  flex-shrink: 0; /* prevents collapsing */
+}
+
+
+/* ================= GALAXY SECTION ================= */
+.galaxy-section {
+  padding: 7rem 1.5rem;
+  background: #000;
+  color: #fff;
+}
+
+.galaxy-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Eyebrow */
+.galaxy-eyebrow {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #c9a24d;
+  margin-bottom: 1.2rem;
+}
+
+/* Title */
+.galaxy-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.3rem, 4vw, 3rem);
+  margin-bottom: 4rem;
+}
+
+/* Grid */
+.galaxy-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+}
+
+/* Items */
+.galaxy-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.galaxy-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.6s ease, opacity 1.6s ease;
+}
+
+/* Sizes */
+.galaxy-item.large {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.galaxy-item.tall {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.galaxy-item:not(.large):not(.tall) {
+  grid-column: span 2;
+}
+
+/* Hover (VERY subtle) */
+.galaxy-item:hover img {
+  transform: scale(1.04);
+}
+
+
+/* ================= BOOKING SECTION ================= */
+.booking-section {
+  padding: 7rem 1.5rem 5rem;
+  background: #0e0e0e;
+  color: #f5f5f5;
+}
+
+.booking-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Eyebrow */
+.booking-eyebrow {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #c9a24d;
+  margin-bottom: 1.5rem;
+}
+
+/* Title */
+.booking-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+/* ================= BOOKING CONTACTS (TEXT ONLY) ================= */
+
+.booking-contacts {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Small editorial label */
+.contact-label {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(245,208,140,0.7);
+  margin-bottom: 1.2rem;
+}
+
+/* Contact stack */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Contact lines */
+.contact-text-line {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: #f5d08c;
+  margin: 0;
+}
+
+/* Hierarchy refinement */
+.contact-text-line.email {
+  letter-spacing: 0.02em;
+}
+
+.contact-text-line.phone {
+  color: rgba(245,208,140,0.85);
+}
+
+
+/* Divider */
+.booking-divider {
+  width: 80px;
+  height: 2px;
+  background: #c9a24d;
+  margin: 0 auto 3rem;
+}
+
+/* Footer contact */
+.contact-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Contact text */
+.contact-text {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #bfbfbf;
+}
+
+/* Socials */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #bfbfbf;
+  position: relative;
+}
+
+/* Subtle hover underline */
+.social-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #c9a24d;
+  transition: width 0.4s ease;
+}
+
+.social-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .contact-footer {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 900px) {
+  .galaxy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galaxy-item,
+  .galaxy-item.large,
+  .galaxy-item.tall {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .brand-line .line {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-text-line {
+    font-family: "Playfair Display", serif;
+    color: #f5d08c;
+    margin: 0;
+    font-size: 1.2rem; /* optional: slightly smaller for mobile */
+  }
+}
+
+
 
 
 
