@@ -3,16 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Precious Event Décor</title>
+  <title>Precious Décor &amp; Events — Calgary Wedding &amp; Event Styling</title>
+
+  <meta name="description" content="Calgary's atelier for luxury wedding and event décor — bespoke florals, draping, staging, and tablescapes styled with restraint and intention." />
   <link rel="icon" href="images/astride_fav.png">
-
-  <meta name="description" content="Luxury wedding and event décor." />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-
 </head>
 
 <body>
@@ -20,19 +18,35 @@
 <!-- Progress bar -->
 <div class="progress" id="progress"></div>
 
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <a href="#" class="nav-mark">Precious <em>Décor</em></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Enquire</a>
+  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
 <!-- HERO -->
 <section class="hero">
 
   <!-- Background carousel -->
   <div class="hero-bg">
     <div class="carousel">
-      <img src="images/IMG_7089.webp" alt="">
+      <img src="images/IMG_7089.webp" alt="" class="is-active">
       <img src="images/IMG_7198.webp" alt="">
-      <img src="images/IMG_7121.webp" alt="">
-      <img src="images/IMG_7153.webp" alt="">
       <img src="images/IMG_7199.webp" alt="">
+      <img src="images/IMG_7121.webp" alt="">
     </div>
   </div>
+
+  <!-- Signature ribbon line -->
+  <svg class="ribbon-line" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path d="M 6,0 C 6,20 14,28 8,45 C 2,62 12,72 9,100" vector-effect="non-scaling-stroke" />
+  </svg>
 
   <!-- Overlay -->
   <div class="hero-overlay"></div>
@@ -42,45 +56,74 @@
     <div class="hero-inner">
       <div class="brand-line">
         <span class="line"></span>
-        <span class="brand-text">Precious Décor & Events</span>
-        <span class="line"></span>
+        <span class="brand-text">Calgary &amp; Beyond</span>
       </div>
 
       <h1>
         Your dream
-        <span class="word-rotate">wedding</span>,
-        <br>
-        <span class="accent accent-line">styled to perfection</span>
+        <span class="word-rotate">wedding</span>
+        <span class="accent-line">styled to perfection.</span>
       </h1>
 
+      <p class="hero-subtext">
+        An atelier for couples who notice detail — bespoke florals, draping,
+        and tablescapes composed with restraint, balance, and quiet intention.
+      </p>
+
       <div class="hero-cta">
-        <a href="#contact" class="btn">Contact Us</a>
+        <a href="#contact" class="btn">Enquire Now</a>
         <a href="#portfolio" class="btn btn-ghost">View Portfolio</a>
       </div>
     </div>
   </div>
+
+  <div class="hero-scroll-cue">
+    <span class="stem"></span>
+    <span>Scroll</span>
+  </div>
 </section>
 
 <!-- LUXURY TEXT SECTION -->
-<section class="luxury-section" id="luxurySection">
+<section class="luxury-section reveal" id="luxurySection">
   <div class="luxury-inner">
-    <span class="luxury-eyebrow">Our Signature</span>
+    <div class="luxury-left">
+      <span class="eyebrow">Our Signature</span>
+      <h2 class="luxury-title">Where elegance unfolds, one detail at a time</h2>
+    </div>
 
-    <h2 class="luxury-title">
-      Where Elegance Unfolds
-    </h2>
+    <div class="luxury-right">
+      <p class="luxury-text">
+        Elegant, modern venue transformations — florals, stages, tablescapes,
+        rentals, and unforgettable moments, considered down to the thread.
+      </p>
+      <div class="luxury-divider"></div>
+      <p class="luxury-sub">
+        From intimate celebrations to grand venues, every detail is styled
+        with care, balance, and purpose.
+      </p>
+    </div>
+  </div>
+</section>
 
-    <p class="luxury-text">
-      Elegant, modern venue transformations — florals, stages,
-      tablescapes,rentals and unforgettable moments.
-    </p>
-
-    <div class="luxury-divider"></div>
-
-    <p class="luxury-sub">
-      From intimate celebrations to grand venues,
-      every detail is styled with care, balance, and purpose.
-    </p>
+<!-- STATS STRIP -->
+<section class="stats-strip reveal-stagger reveal">
+  <div class="stats-inner">
+    <div class="stat reveal-child">
+      <span class="stat-num">120+</span>
+      <span class="stat-label">Events Styled</span>
+    </div>
+    <div class="stat reveal-child">
+      <span class="stat-num">8</span>
+      <span class="stat-label">Years in Practice</span>
+    </div>
+    <div class="stat reveal-child">
+      <span class="stat-num">40+</span>
+      <span class="stat-label">Venue Partners</span>
+    </div>
+    <div class="stat reveal-child">
+      <span class="stat-num">5.0</span>
+      <span class="stat-label">Average Rating</span>
+    </div>
   </div>
 </section>
 
@@ -88,15 +131,20 @@
 <section class="services-section" id="services">
   <div class="services-inner">
 
-    <span class="services-eyebrow">What We Do</span>
+    <div class="services-head reveal">
+      <div>
+        <span class="eyebrow">What We Do</span>
+        <h2 class="services-title">Our Services</h2>
+      </div>
+      <p class="services-note">
+        Four disciplines, one cohesive vision — each piece designed to work
+        in concert with the rest.
+      </p>
+    </div>
 
-    <h2 class="services-title">
-      Our Services
-    </h2>
+    <div class="services-grid reveal-stagger reveal">
 
-    <div class="services-grid">
-
-      <article class="service-card">
+      <article class="service-card reveal-child">
         <div class="service-image">
           <img src="images/IMG_7132.webp" alt="Wedding décor styling">
         </div>
@@ -106,7 +154,7 @@
         </p>
       </article>
 
-      <article class="service-card">
+      <article class="service-card reveal-child">
         <div class="service-image">
           <img src="images/IMG-20251225-WA0052.webp" alt="Luxury floral design">
         </div>
@@ -116,17 +164,17 @@
         </p>
       </article>
 
-      <article class="service-card">
+      <article class="service-card reveal-child">
         <div class="service-image">
           <img src="images/IMG_7145.webp" alt="Event draping and staging">
         </div>
-        <h3 class="service-name">Draping & Staging</h3>
+        <h3 class="service-name">Draping &amp; Staging</h3>
         <p class="service-desc">
           Soft draping and refined stage design that transforms spaces.
         </p>
       </article>
 
-      <article class="service-card">
+      <article class="service-card reveal-child">
         <div class="service-image">
           <img src="images/IMG_7153.webp" alt="Event rentals">
         </div>
@@ -140,139 +188,75 @@
   </div>
 </section>
 
-<!-- GALAXY SECTION -->
+<!-- GALLERY SECTION -->
 <section class="galaxy-section" id="portfolio">
   <div class="galaxy-inner">
 
-    <span class="galaxy-eyebrow">Portfolio</span>
+    <div class="galaxy-head reveal">
+      <div>
+        <span class="eyebrow">Portfolio</span>
+        <h2 class="galaxy-title">A Gallery Of Moments</h2>
+      </div>
+    </div>
 
-    <h2 class="galaxy-title">
-      A Gallery Of Moments
-    </h2>
+    <div class="galaxy-grid reveal-stagger reveal">
 
-    <div class="galaxy-grid">
-
-      <figure class="galaxy-item tall">
+      <figure class="galaxy-item tall reveal-child">
         <img src="images/IMG-20251225-WA0008.jpg" alt="Luxury wedding décor">
       </figure>
 
-      <figure class="galaxy-item">
-        <img src="images/IMG_7153.webp" alt="Event draping design">
-      </figure>
-
-      <figure class="galaxy-item">
-        <img src="images/IMG_7198.webp" alt="Elegant floral styling">
-      </figure>
-
-      <figure class="galaxy-item">
+      <figure class="galaxy-item reveal-child">
         <img src="images/IMG_7121.webp" alt="Event draping design">
       </figure>
 
-
-      <figure class="galaxy-item tall">
-        <img src="images/IMG-20251225-WA0028.jpg" alt="Reception décor setup">
+      <figure class="galaxy-item reveal-child">
+        <img src="images/IMG_7198.webp" alt="Elegant floral styling">
       </figure>
 
-      <figure class="galaxy-item">
-        <img src="images/IMG-20251225-WA0016.jpg" alt="Luxury tablescape">
-      </figure>
-
-      <figure class="galaxy-item">
-        <img src="images/JM6_6540.webp" alt="Luxury tablescape">
-      </figure>
-
-      <figure class="galaxy-item">
+      <figure class="galaxy-item wide reveal-child">
         <img src="images/IMG_7132.webp" alt="Luxury tablescape">
       </figure>
 
-      <figure class="galaxy-item tall">
-        <img src="images/JM6_6563.webp" alt="Luxury tablescape">
+      <figure class="galaxy-item reveal-child">
+        <img src="images/IMG-20251225-WA0016.jpg" alt="Luxury tablescape">
       </figure>
 
-      <figure class="galaxy-item">
+      <figure class="galaxy-item tall reveal-child">
+        <img src="images/JM6_6540.webp" alt="Luxury tablescape">
+      </figure>
+
+      <figure class="galaxy-item reveal-child">
+        <img src="images/IMG-20251225-WA0028.jpg" alt="Reception décor setup">
+      </figure>
+
+      <figure class="galaxy-item reveal-child">
         <img src="images/IMG_7145.webp" alt="Luxury tablescape">
       </figure>
 
-      <figure class="galaxy-item">
-        <img src="images/IMG_7116.webp" alt="Luxury tablescape">
-      </figure>
-
-      <figure class="galaxy-item">
+      <figure class="galaxy-item reveal-child">
         <img src="images/IMG_7089.webp" alt="Luxury tablescape">
       </figure>
+
     </div>
 
   </div>
 </section>
 
 <!-- FAQ SECTION -->
-<!--<section class="faq-section" id="faq">
-  <div class="faq-inner">
-
-    <span class="faq-eyebrow">Frequently Asked</span>
-
-    <h2 class="faq-title">
-      Questions & Answers
-    </h2>
-
-    <div class="faq-list">
-
-      <details class="faq-item">
-        <summary>How far in advance should I book?</summary>
-        <div class="faq-answer">
-        <p>
-          We recommend booking at least 4–8 weeks in advance to ensure
-          availability and allow time for thoughtful design planning.
-        </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Do you offer custom décor designs?</summary>
-        <div class="faq-answer">
-        <p>Yes. Every event is designed uniquely to reflect your vision,
-          venue, and personal style.
-        </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Do you work with all venues?</summary>
-        <div class="faq-answer">
-        <p>
-          We work with a wide range of venues and are happy to collaborate
-          with venue teams to ensure seamless execution.
-        </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is there a minimum budget?</summary>
-        <div class="faq-answer">
-        <p>
-          Budgets vary by event size and scope. During consultation, we
-          align expectations and propose solutions that fit your needs.
-        </p>
-        </div>
-      </details>
-
-    </div>
-
-  </div>
-</section>-->
-
-<!-- FAQ SECTION -->
 <section class="faq-section" id="faq">
   <div class="faq-inner">
 
-    <span class="faq-eyebrow">Frequently Asked</span>
-    <h2 class="faq-title">Questions & Answers</h2>
+    <div class="faq-head reveal">
+      <span class="eyebrow">Frequently Asked</span>
+      <h2 class="faq-title">Questions &amp; Answers</h2>
+    </div>
 
-    <div class="faq-list">
+    <div class="faq-list reveal reveal-stagger">
 
-      <div class="faq-item">
+      <div class="faq-item reveal-child">
         <button class="faq-question">
           How far in advance should I book?
+          <span class="faq-icon"></span>
         </button>
         <div class="faq-answer">
           <p>
@@ -282,9 +266,10 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item reveal-child">
         <button class="faq-question">
           Do you offer custom décor designs?
+          <span class="faq-icon"></span>
         </button>
         <div class="faq-answer">
           <p>
@@ -294,9 +279,10 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item reveal-child">
         <button class="faq-question">
           Do you work with all venues?
+          <span class="faq-icon"></span>
         </button>
         <div class="faq-answer">
           <p>
@@ -306,9 +292,10 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item reveal-child">
         <button class="faq-question">
           Is there a minimum budget?
+          <span class="faq-icon"></span>
         </button>
         <div class="faq-answer">
           <p>
@@ -322,37 +309,29 @@
   </div>
 </section>
 
-
-
 <!-- FINAL BOOKING SECTION -->
-<section class="booking-section" id="contact">
+<section class="booking-section reveal" id="contact">
   <div class="booking-inner">
 
-    <span class="booking-eyebrow">Let’s Create Something Beautiful</span>
+    <span class="eyebrow booking-eyebrow">Let's Create Something Beautiful</span>
 
-    <h2 class="booking-title">
-      Contacts & Socials
-    </h2>
+    <h2 class="booking-title">Contacts &amp; Socials</h2>
 
     <p class="booking-text">
       From intimate celebrations to grand occasions,
       we would love to bring your vision to life.
     </p>
-    <br>
 
     <div class="booking-contacts">
-
       <div class="contact-details">
-        <p class="contact-text-line email">
+        <a href="mailto:preciousy476@gmail.com" class="contact-text-line email">
           preciousy476@gmail.com
-        </p>
-
-        <p class="contact-text-line phone">
-          +1&nbsp;(403)&nbsp;402-&nbsp;0719
-        </p>
+        </a>
+        <a href="tel:+14034020719" class="contact-text-line phone">
+          +1&nbsp;(403)&nbsp;402-0719
+        </a>
       </div>
     </div>
-
 
     <div class="booking-divider"></div>
 
@@ -360,7 +339,7 @@
     <div class="contact-footer">
 
       <p class="contact-text">
-        Precious Décor & Events <br>
+        Precious Décor &amp; Events <br>
         Calgary, Canada
       </p>
 
@@ -375,7 +354,7 @@
   </div>
 </section>
 
-
+<p class="footer-credit">© 2026 Precious Décor &amp; Events. All rights reserved.</p>
 
 <script src="script.js"></script>
 </body>
