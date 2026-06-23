@@ -50,7 +50,7 @@ if (slides.length > 1) {
 
 /* ===== Word rotate ===== */
 document.addEventListener('DOMContentLoaded', () => {
-  const words = ['wedding', 'occasion', 'event', 'reception'];
+  const words = ['wedding', 'occasion', 'event', 'reception', 'ceremony'];
   const el = document.querySelector('.word-rotate');
 
   if (el) {
